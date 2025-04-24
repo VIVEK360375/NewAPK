@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #9b1919;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .login-container {
+            background-color: rgba(131, 139, 134, 0.8);
+            padding: 30px;
+            border-radius: 200px;
+            box-shadow: 0 0 10px rgba(32, 9, 9, 0.1);
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #8d2323;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border: 2px solid #f00000;
+            border-radius: 9px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #0a79f0;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 9px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #53f90b;
+        }
+
+        .hidden-content {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            border: 1px solid #b92d2d;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+
+        .invalid-key {
+            color: red;
+            margin-top: 10px;
+        }
+
+        #background-video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        #pdfViewerContainer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.9);
+            z-index: 2;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #pdfViewer {
+            width: 80%;
+            height: 80%;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="background-video" loop>
+        <source src="video6.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+    </video>
+    <div class="overlay-text" id="overlay"></div>
+    <script>
+        const video = document.getElementById("background-video");
+        const overlay = document.getElementById("overlay");
+
+        document.body.addEventListener(
+            "click",
+            () => {
+                video.volume = 1.0;
+                video
+                    .play()
+                    .then(() => {
+                        overlay.style.display = "none";
+                    })
+                    .catch((err) => {
+                        console.error("Video playback failed:", err);
+                    });
+            }, {
+            once: true
+        }
+        );
+    </script>
+    <div class="login-container">
+        <h2>Login</h2>
+        <div class="input-group">
+            <label for="key">Enter Key:</label>
+            <input type="text" id="key" name="key" />
+        </div>
+        <button onclick="checkKey()">Submit</button>
+        <p id="invalidMessage" class="invalid-key" style="display: none">
+            Invalid Key
+        </p>
+    </div>
+    <div id="hiddenContent" class="hidden-content">
+        <h2>Welcome!</h2>
+        <p>
+            This is the content that is revealed after entering the correct key.
+        </p>
+    </div>
+    <div id="pdfViewerContainer">
+        <iframe id="pdfViewer" src="" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        const correctKey = "v";
+        const loginContainer = document.querySelector(".login-container");
+        const hiddenContent = document.getElementById("hiddenContent");
+        const keyInput = document.getElementById("key");
+        const invalidMessage = document.getElementById("invalidMessage");
+        const pdfViewerContainer = document.getElementById("pdfViewerContainer");
+        const pdfViewer = document.getElementById("pdfViewer");
+
+        function checkKey() {
+            const enteredKey = keyInput.value;
+            if (enteredKey === correctKey) {
+                loginContainer.style.display = "none";
+                hiddenContent.style.display = "none";
+                pdfViewerContainer.style.display = "flex"; // Show the PDF viewer
+                pdfViewer.src = "pdf"; // Set the PDF file path here
+                invalidMessage.style.display = "none";
+                window.location.href = "header.html";
+            } else {
+                invalidMessage.style.display = "block";
+                keyInput.value = "";
+            }
+        }
+    </script>
+</body>
+
+</html>
