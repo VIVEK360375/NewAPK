@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .slick-prev:before,
+        .slick-next:before {
+            font-size: 20px;
+            line-height: 1;
+            opacity: .75;
+            color: white;
+        }
+
+        .slick-prev {
+            left: 25px;
+            z-index: 1;
+        }
+
+        .slick-next {
+            right: 25px;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <header
+        class="bg-blue-500 text-white py-4 flex items-center justify-between shadow-md sticky top-0 z-10 rounded-md">
+        <div class="logo text-2xl font-semibold ml-4">flipzone</div>
+        <div class="search-bar flex-grow px-4 max-w-md">
+            <input type="text" placeholder="Fucking Hub..."
+                class="w-full px-4 py-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-300" />
+        </div>
+        <div class="login-cart flex items-center mr-4">
+            <button
+                class="login-button bg-white text-blue-500 px-4 py-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-300 mr-4">Login</button>
+            <a href="#" class="cart-icon text-white text-xl">🛒 Cart</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto mt-8 p-4">
+        <section class="banner bg-yellow-100 rounded-md py-4 px-6 mb-8">
+            <div class="autoplay-banner relative w-full">
+                <div class="slide">
+                    <img src="vbbb.avif" alt="Smartphone Ad"
+                        class="w-full rounded-md">
+                </div>
+                <div class="slide">
+                    <img src="vnnn.avif" alt="Smartwatch Ad"
+                        class="w-full rounded-md">
+                </div>
+                <div class="slide">
+                    <img src="vnn.avif" alt="Banner 3"
+                        class="w-full rounded-md">
+                </div>
+            </div>
+        </section>
+
+        <section class="product-categories mb-8">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Product Categories</h2>
+            <div class="category-list flex justify-between overflow-x-auto">
+                <div class="category-item bg-white rounded-md shadow-md p-4 text-center min-w-[100px] mr-4">
+                    <img src="vn.avif" alt="Electronics"
+                        class="mx-auto mb-2 rounded-md">
+                    <p class="text-gray-700">Electronics</p>
+                </div>
+                <div class="category-item bg-white rounded-md shadow-md p-4 text-center min-w-[100px] mr-4">
+                    <img src="tt.jpg" alt="Clothing"
+                        class="mx-auto mb-2 rounded-md">
+                    <p class="text-gray-700">Clothing</p>
+                </div>
+                <div class="category-item bg-white rounded-md shadow-md p-4 text-center min-w-[100px] mr-4">
+                    <img src="car4.jpg" alt="Home & Furniture"
+                        class="mx-auto mb-2 rounded-md">
+                    <p class="text-gray-700">Home & Furniture</p>
+                </div>
+                <div class="category-item bg-white rounded-md shadow-md p-4 text-center min-w-[100px] mr-4">
+                    <img src="car3.png" alt="Books" class="mx-auto mb-2 rounded-md">
+                    <p class="text-gray-700">Books</p>
+                </div>
+                <div class="category-item bg-white rounded-md shadow-md p-4 text-center min-w-[100px] mr-4">
+                    <img src="car2.jpg" alt="Sports" class="mx-auto mb-2 rounded-md">
+                    <p class="text-gray-700">Sports</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-products">
+            <h2 class="text-2xl font-semibold mb-4 text-gray-800">Featured Products</h2>
+            <div class="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="product-item bg-white rounded-md shadow-md p-4">
+                    <img src="car1.jpg" alt="Laptop" class="mx-auto mb-2 rounded-md">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Laptop</h3>
+                    <p class="text-gray-600 mb-2">High-performance laptop with 16GB RAM and 512GB SSD.</p>
+                    <p class="text-gray-700 font-semibold mb-2">Price: $1200</p>
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">Add
+                        to Cart</button>
+                </div>
+                <div class="product-item bg-white rounded-md shadow-md p-4">
+                    <img src="jl.avif" alt="Smartphone"
+                        class="mx-auto mb-2 rounded-md">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Smartphone</h3>
+                    <p class="text-gray-600 mb-2">Latest smartphone with 128MP camera and 5G support.</p>
+                    <p class="text-gray-700 font-semibold mb-2">Price: $800</p>
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">Add
+                        to Cart</button>
+                </div>
+                <div class="product-item bg-white rounded-md shadow-md p-4">
+                    <img src="cb.jpg" alt="Smart Watch"
+                        class="mx-auto mb-2 rounded-md">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Smart Watch</h3>
+                    <p class="text-gray-600 mb-2">Waterproof Smart Watch with heart rate sensor.</p>
+                    <p class="text-gray-700 font-semibold mb-2">Price: $300</p>
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">Add
+                        to Cart</button>
+                </div>
+                <div class="product-item bg-white rounded-md shadow-md p-4">
+                    <img src="hq720 (11).avif" alt="Headphones"
+                        class="mx-auto mb-2 rounded-md">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-2">Headphones</h3>
+                    <p class="text-gray-600 mb-2">Noise-cancelling headphones with crystal clear audio.</p>
+                    <p class="text-gray-700 font-semibold mb-2">Price: $200</p>
+                    <button
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300">Add
+                        to Cart</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-200 text-gray-700 py-4 text-center mt-8 rounded-md">
+        <p>© 2024 Flipkart. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.autoplay-banner').slick({
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                dots: true,
+                arrows: true,
+            });
+        });
+    </script>
+</body>
+
+</html>
