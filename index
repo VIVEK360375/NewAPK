@@ -159,7 +159,7 @@
     </div>
 
     <script>
-        const correctKey = "v";
+        const correctKey = "Darkkallu";
         const loginContainer = document.querySelector(".login-container");
         const hiddenContent = document.getElementById("hiddenContent");
         const keyInput = document.getElementById("key");
